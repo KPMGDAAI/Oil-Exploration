@@ -1,55 +1,61 @@
-# Predicting Oil Reservoirs with CNN - Upstream Use Case
+# Oil Exploration Probability Using Regression Modeling
 
 ## How to Use This Repository
 
+This repository contains everything needed to predict the probability of oil exploration success using seismic data and machine learning. The repository is structured as follows:
 
+### DATA
 
-This repository contains all the components necessary for predicting potential oil reservoirs using seismic data with a **Convolutional Neural Network (CNN)**. The structure of the repository is as follows:
+This folder contains the CSV files with seismic data that include geological features and location information. These files are essential for training and testing the machine learning model.
 
--   **Data**: This folder contains the **seismic_with_calculated_features.csv** file. This dataset includes seismic features such as amplitude, wave velocity, reflection strength, and several calculated features like seismic impedance. These features are crucial inputs for the CNN model to make predictions about the presence of oil reservoirs.
-    
--   **Notebook**: This folder contains the Jupyter notebook that walks you through the entire process, from loading the data to transforming it and training a CNN to predict the likelihood of oil presence.
-    
--   **Dashboard**: This folder includes the Power BI Dashboards.
-    
+### NOTEBOOK
+
+This folder includes the notebook, which walks through the process of loading data, feature engineering, training the regression model, and evaluating the predicted probabilities of oil exploration success.
+
+### DASHBOARD
+
+This folder contains scripts and visualizations that help analyze the exploration probabilities, providing insights through an interactive dashboard.
+
+----------
 
 ## Business Use Case
 
- Accurate identification of potential oil reservoirs is critical for optimizing upstream oil exploration, reducing exploration costs, and increasing drilling success rates. This project leverages seismic data and advanced deep learning techniques to:
+![enter image description here](https://i.pinimg.com/736x/60/60/f2/6060f272a12cc311bc7dfe6d13a19caa.jpg)
 
--   Predict the likelihood of oil reservoirs based on seismic data, allowing for more targeted and efficient drilling operations.
--   Reduce financial risks associated with unnecessary drilling by improving the accuracy of predictions.
--   Provide valuable insights into subsurface conditions through feature engineering and data visualization.
+Accurate prediction of oil exploration success is crucial for optimizing resources and improving the efficiency of exploration efforts. This project helps:
+
+-   **Predict the probability of discovering hydrocarbons** at different locations using seismic data.
+-   **Make data-driven decisions** for oil exploration, reducing time and cost by focusing on high-probability areas.
+-   **Provide visual insights** through interactive dashboards that highlight promising exploration sites.
+
+----------
 
 ## Project Structure
-
-
-
+![enter image description here](https://i.pinimg.com/736x/44/da/14/44da1474bff6159da1fe39c7b4eba7ca.jpg)
 ### Step 1: Loading and Analyzing Seismic Data
 
+The first step is to load the seismic data into a pandas DataFrame. This data includes features such as amplitude, wave velocity, and fault presence, which are critical to predicting the probability of hydrocarbon presence.
 
-The first step involves loading seismic data into a pandas DataFrame. This dataset forms the foundation for the analysis and prediction model. Instructions for loading the dataset are provided in the notebook, including a detailed view of the raw seismic data.
+### Step 2: Engineering Features
 
-### Step 2: Enhancing the Data with Calculated Features
+In this step, additional features are created to improve the model's predictive power. The notebook explains how to engineer features like `Amplitude_to_Reflection_Ratio`, `Normalized_Travel_Time`, and `Fault_Influence` to capture more meaningful patterns in the data.
 
-Once the data is loaded, the next step is creating calculated features such as **Seismic Impedance**, **Amplitude-to-Reflection Strength Ratio**, and **Fault Influence**. These features add valuable insights to the dataset, enabling the CNN to make more accurate predictions.
+### Step 3: Training the Regression Model
 
-### Step 3: Exploring the Data and Visualizing Patterns
+This step involves training a regression model to predict the probability of hydrocarbon presence at different locations based on the seismic features. The notebook provides details on splitting the data, training the model, and evaluating its performance.
 
-This step guides you through visualizing relationships between seismic features using heatmaps and distribution plots. Understanding these relationships helps to identify patterns that could indicate oil presence, providing crucial insights for decision-making.
+### Step 4: Visualizing Results
 
-### Step 4: Building and Training the CNN Model
+Once the model has been trained, the results are visualized. The notebook guides you through creating a table of locations with predicted probabilities and their categories (e.g., High Probability, Low Probability).
 
-In this step, the notebook walks you through building the CNN model. You'll learn how to structure the data for CNN input, construct convolutional and pooling layers, and use a **Dense Layer** for classification. This model is key for analyzing seismic data and predicting the presence of oil reservoirs.
-
-### Step 5: Evaluating and Visualizing Predictions
-
-After training the CNN, you will evaluate the model's performance using accuracy metrics. The notebook helps you visualize the training process, the performance of the model on test data, and the predicted likelihood of oil presence compared to actual results. This step ensures the model is robust and reliable.
+----------
 
 ## Dashboard
 
+The dashboard section provides visual insights into the model's predictions. You can interact with the exploration data, view high-probability sites, and filter locations based on probability categories.
 
+----------
 
 ## Conclusion
 
-This project demonstrates how seismic data, combined with feature engineering and deep learning using CNNs, can significantly improve oil reservoir predictions. By integrating data analysis, feature transformations, and predictive modeling, this approach enables more informed upstream exploration decisions, ultimately saving time, resources, and costs for the oil industry.
+This project demonstrates how machine learning, coupled with seismic data analysis, can enhance decision-making in oil exploration. The model helps ADNOC prioritize exploration sites based on predicted hydrocarbon presence, ensuring more efficient exploration and resource allocation.
