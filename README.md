@@ -51,6 +51,8 @@ Once the model has been trained, the results are visualized. The notebook guides
 ----------
 
 ## Dashboard
+![enter image description here](https://i.pinimg.com/736x/e1/60/b4/e160b4b384d41defb5b635cb1aea80e1.jpg)
+
 
 The dashboard section provides visual insights into the model's predictions. You can interact with the exploration data, view high-probability sites, and filter locations based on probability categories.
 
